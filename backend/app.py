@@ -1,12 +1,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import os
+from dotenv import load_dotenv
 from routes import (
     classify_email
 )
 
-origins = [
-    "http://localhost:5173",
-]
+load_dotenv()
+
+origins = os.environ.get("ALLOWED_ORIGINS").split(",") if os.environ.get("ALLOWED_ORIGINS") else ""
 
 app = FastAPI()
 

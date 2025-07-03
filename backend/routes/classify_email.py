@@ -2,7 +2,7 @@ from fastapi import APIRouter, File, UploadFile, HTTPException
 from pydantic import BaseModel
 from typing import Annotated
 from utils.extract_content_from_file import extract_text_from_pdf_bytes, extract_text_from_txt_bytes
-from utils.nlp_processor import preprocess_text
+# from utils.nlp_processor import preprocess_text
 from utils.ai_service import classify_email_async
 
 router = APIRouter(prefix="/email", tags=["Classify Email"])
@@ -15,8 +15,8 @@ async def classify_email(email_content: str):
             "message": "O conteúdo do email não pode ser vazio"
         })
 
-    processed_text = preprocess_text(email_content)
-    response = await classify_email_async(processed_text)
+    # processed_text = preprocess_text(email_content)
+    response = await classify_email_async(email_content)
 
     if "Erro" in response["classification"] or "Indefinido" in response["classification"]:
         raise HTTPException(status_code=500, detail={

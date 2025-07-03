@@ -7,8 +7,8 @@ load_dotenv()
 
 genai.configure(api_key=os.environ.get("GOOGLE_API_KEY"))
 
-# uses gemini 1.5 flash as model
-model = genai.GenerativeModel(model_name="gemini-2.0-flash")
+# uses gemini 2.5 flash as model
+model = genai.GenerativeModel(model_name="gemini-2.5-flash")
 
 async def classify_email_async(email_text: str):
     prompt = f"""

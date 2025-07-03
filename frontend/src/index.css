@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --color-background: #f1f1f1;
+    --color-dark-background: #1f2632;
+    --color-text: #000;
+    --color-dark-text: #f1f1f1;
+    --color-darkerWhite: #B3B4B6;
+    --color-orange: #FE9A06;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-darkerWhite);
+    border-radius: 10px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: calc(100vh - 24px);
+    font-family: "Jost", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.form {
+    @apply flex flex-col justify-between;
+}
+
+.form-div {
+    @apply pb-5 flex flex-col gap-2;
+}
+
+.submit-button {
+    @apply w-39 self-center text-white bg-orange px-7 py-2 rounded-md cursor-pointer;
+}
+
+.trash-button {
+    @apply cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-600 rounded-full p-2.5;
+}

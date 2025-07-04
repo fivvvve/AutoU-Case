@@ -11,6 +11,8 @@ Após realizar a classificação, uma resposta para o email também é gerada e 
 
 Caso deseje visualizar e testar o projeto, ele pode ser acessado em https://auto-u-frontent.vercel.app/ .
 
+**Obs.: Ao acessar o site e enviar um email, a resposta pode demorar a aparecer porque o backend está hospedado no Render, que encerra o servidor após um período de inatividade. Nesse caso, ao enviar a requisição, o servidor precisa ser reativado, o que pode levar alguns segundos. Após essa inicialização, a aplicação funcionará normalmente.**
+
 ## Principais tecnologias utilizadas
 
 • Frontend: React com Vite, Tailwind, Axios, React-icons e React-hot-toast.
@@ -54,17 +56,15 @@ A URL do backend pode variar de computador para computador, porém usualmente es
 
 2. Crie um ambiente virtual e o acesse com:
 
-Ubuntu:
    ```bash
+   //Ubuntu
    python3 -m venv .venv
    source .venv/bin/activate
-   ```
 
-Windows:
-  ```bash
-  python -m venv .venv
-  .venv\Scripts\activate
-  ```
+   //Windows
+   python -m venv .venv
+   .venv\Scripts\activate
+   ```
 
 4. Instale as dependências com o comando:
 
@@ -90,3 +90,6 @@ Ex.: ALLOWED_ORIGINS="http://localhost:5173,http://seudominio.app"
    ```bash
    uvicorn app:app
    ```
+
+
+Após realizar todos os passos descritos, acesse a URL do servidor do frontend em seu navegador e a aplicação estará pronta para uso.

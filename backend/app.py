@@ -24,4 +24,4 @@ app.include_router(classify_email.router)
 
 @app.get("/")
 def read_root():
-    return {"message": "Vercel Server"}
+    return {"message": "Render Server"}
